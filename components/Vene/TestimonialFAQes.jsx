@@ -1,6 +1,6 @@
 import React from 'react';
-import TestimonialCarouselES from './Vene/TestimonialCarouselES';
-import FAQAccordionES from './Vene/FAQAccordionES';
+import TestimonialCarouselES from './Vene/TestimonialCarouseles';
+import FAQAccordionES from './Vene/FAQAccordiones';
 
 const TestimonialFAQ = () => {
   return (
