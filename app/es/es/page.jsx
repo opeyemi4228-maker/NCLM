@@ -6,7 +6,7 @@ import Overlap1 from '@/components/Vene/Overlap1es';
 import Mission1 from '@/components/Vene/Mission1es';
 import JoinUs from '@/components/Vene/JoinUses';
 import StoriesArticles from '@/components/Vene/Storieses';
-import TestimonialFAQ from '@/components/Vene/TestimonialFAQ';
+import TestimonialFAQ from '@/components/TestimonialFAQ';
 
 export default function HomePage() {
   return (

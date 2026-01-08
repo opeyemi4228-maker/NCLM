@@ -6,7 +6,7 @@ import Overlap1 from '@/components/nl/Overlap1NL';
 import Mission1 from '@/components/nl/Mission1NL';
 import JoinUs from '@/components/nl/JoinUsNL';
 import StoriesArticles from '@/components/nl/StoriesNL';
-import TestimonialFAQ from '@/components/nl/TestimonialFAQNL';
+import TestimonialFAQ from '@/components/TestimonialFAQ';
 
 export default function HomePage() {
   return (
