@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import dynamic from "next/dynamic";
+import { default as nextDynamic } from "next/dynamic";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Overlap1 from "@/components/Overlap1";
@@ -11,7 +11,7 @@ import TestimonialFAQ from "@/components/TestimonialFAQ";
 
 export const dynamic = 'force-dynamic';
 
-const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
+const Navbar = nextDynamic(() => import("@/components/Navbar"), { ssr: false });
 
 const Home = () => {
   return (
