@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { assets } from '@/assets/assets';
 
+export const dynamic = 'force-dynamic';
+
 const values = [
   {
     icon: 'https://img.icons8.com/plasticine/100/book.png',

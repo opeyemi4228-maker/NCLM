@@ -7,6 +7,8 @@ import { format } from "date-fns";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
 
+export const dynamic = 'force-dynamic';
+
 const SAMPLE_PROGRAMS = [
 	{
 		id: "p1",
