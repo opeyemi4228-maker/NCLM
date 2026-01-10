@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 // NOTA: importa assets como exportación por defecto (ajusta si tu archivo de assets usa exportaciones nombradas)
 import { assets } from '@/assets/assets';
 import Image from 'next/image';
+export const dynamic = 'force-dynamic';
 
 const leaders = [
   {

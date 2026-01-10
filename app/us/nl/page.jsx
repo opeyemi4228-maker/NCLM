@@ -8,6 +8,8 @@ import JoinUs from '@/components/Netherlands/en/JoinUsen';
 import StoriesArticles from '@/components/Netherlands/en/StoriesArticlesen';
 import TestimonialFAQ from '@/components/TestimonialFAQ';
 
+export const dynamic = 'force-dynamic';
+
 export default function HomePage() {
   return (
     <div className="w-full">

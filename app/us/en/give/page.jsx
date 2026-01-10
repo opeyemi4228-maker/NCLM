@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+export const dynamic = 'force-dynamic';
+
 const givingOptions = [
   { id: 1, title: 'One-Time Gift', icon: 'https://img.icons8.com/flat-round/100/filled-like.png', description: 'Make a single donation to support our mission', popular: false },
   { id: 2, title: 'Monthly Giving', icon: 'https://img.icons8.com/external-soft-fill-juicy-fish/100/external-give-hands-and-gestures-soft-fill-soft-fill-juicy-fish-2.png', description: 'Become a monthly partner with recurring support', popular: true },
