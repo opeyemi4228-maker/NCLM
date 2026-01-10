@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 // NOTE: import assets as the default export (adjust if your assets file uses named exports)
-import { assets }from '@/assets/assets';
+import { assets } from '@/assets/assets';
 import Image from 'next/image';
 
 const leaders = [
