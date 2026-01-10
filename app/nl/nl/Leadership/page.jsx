@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { assets } from '@/assets/assets';
 import Image from 'next/image';
 
+export const dynamic = 'force-dynamic';
+
 const leaders = [
   {
     id: 1,
