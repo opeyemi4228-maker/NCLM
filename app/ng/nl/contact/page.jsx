@@ -8,10 +8,9 @@ import { assets } from "@/assets/assets";
 
 /*
 ContactPage.jsx
-- Two CTA buttons: Prayer Request and Testimony (open respective modal forms)
-- Hero, contact details, Google Map embed, responsive layout
+- Twee CTA-knoppen: Gebedsverzoek en Getuigenis (openen respectieve modale formulieren)
+- Hero, contactgegevens, Google Map embed, responsieve lay-out
 - Tailwind CSS utility classes
-- Replace map src, images, and contact details with your real data
 */
 
 export default function ContactPage() {
@@ -24,12 +23,10 @@ export default function ContactPage() {
 
   function submitForm(e) {
     e.preventDefault();
-    // TODO: Wire this to Firebase / Supabase / Email API
     console.log("Submit", { type: activeForm, ...formData, createdAt: new Date().toISOString() });
-    // optimistic UX
     setFormData({ name: "", email: "", phone: "", message: "" });
     setActiveForm(null);
-    alert("Thank you — your submission has been received.");
+    alert("Dank u wel — uw inzending is ontvangen.");
   }
 
   return (
@@ -38,17 +35,18 @@ export default function ContactPage() {
       <section className="relative h-[320px] md:h-[420px] overflow-hidden">
         <Image
           src={assets.UNAWARE}
-          alt="Church hero"
-          fill
-          className="object-cover opacity-70"
+          alt="Kerk hero"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-black/50" />
-
         <div className="relative z-10 flex items-center h-full px-6 md:px-20">
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">Contact & Connect</h1>
+            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
+              Contact & Verbinding
+            </h1>
             <p className="mt-3 text-gray-200 max-w-2xl">
-              We’d love to hear from you — prayer requests, testimonies, volunteering, or general enquiries.
+              We horen graag van u — gebedsverzoeken, getuigenissen,
+              vrijwilligerswerk of algemene vragen.
             </p>
           </motion.div>
         </div>
@@ -57,8 +55,10 @@ export default function ContactPage() {
       {/* ACTIONS */}
       <section className="py-12 px-6 md:px-20 bg-[#ffffff] text-black">
         <motion.div className="max-w-4xl mx-auto text-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <h2 className="text-3xl font-bold">How can we serve you?</h2>
-          <p className="text-gray-800 mt-2">Choose an option below and fill the short form.</p>
+          <h2 className="text-3xl font-bold">Hoe kunnen wij u dienen?</h2>
+          <p className="text-gray-800 mt-2">
+            Kies hieronder een optie en vul het korte formulier in.
+          </p>
 
           <div className="mt-8 flex flex-col md:flex-row items-center justify-center gap-6">
             <button
@@ -66,7 +66,7 @@ export default function ContactPage() {
               className="px-8 py-3 rounded-lg font-semibold shadow"
               style={{ backgroundColor: "#1A237E", color: "white" }}
             >
-              Prayer Request
+              Gebedsverzoek
             </button>
 
             <button
@@ -74,14 +74,14 @@ export default function ContactPage() {
               className="px-8 py-3 rounded-lg font-semibold shadow"
               style={{ backgroundColor: "#FFD700", color: "black" }}
             >
-              Share Testimony
+              Getuigenis Delen
             </button>
 
             <button
               href="/programs"
               className="px-6 py-3 rounded-lg font-semibold border border-white/10"
             >
-              View Programs & Events
+              Programma’s & Evenementen Bekijken
             </button>
           </div>
         </motion.div>
@@ -94,23 +94,27 @@ export default function ContactPage() {
             <div className="flex items-start gap-3">
               <FiMapPin size={28} className="text-purple-600" />
               <div>
-                <h4 className="font-semibold">Address</h4>
-                <p className="text-gray-800">6th Avenue Danglo Avenue, Gwarinpa, Abuja, Nigeria</p>
+                <h4 className="font-semibold">Adres Zoeterwoude Vestiging</h4>
+                <p className="text-gray-800">
+                  Energieweg 14<br />
+                  2382 NJ Zoeterwoude<br />
+                  Nederland
+                </p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
               <FiPhone size={28} className="text-purple-600" />
               <div>
-                <h4 className="font-semibold">Phone</h4>
-                <p className="text-gray-800">+234 814 000 0000</p>
+                <h4 className="font-semibold">Telefoon</h4>
+                <p className="text-gray-800">+31 (0)6 304 770 48</p>
               </div>
             </div>
 
             <div className="flex items-start gap-3">
               <FiMail size={28} className="text-purple-600" />
               <div>
-                <h4 className="font-semibold">Email</h4>
+                <h4 className="font-semibold">E-mail</h4>
                 <p className="text-gray-800">contact@yourchurch.org</p>
               </div>
             </div>
@@ -122,8 +126,10 @@ export default function ContactPage() {
                 <iframe
                   className="w-full h-full"
                   loading="lazy"
-                  title="Church location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.819...."
+                  title="Kerk locatie - Zoeterwoude"
+                  src="https://www.google.com/maps?q=Energieweg+14,+2382+NJ+Zoeterwoude,+Nederland&output=embed"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
             </motion.div>
@@ -150,11 +156,13 @@ export default function ContactPage() {
                 <FiX />
               </button>
 
-              <h3 className="text-2xl font-bold mb-1">{activeForm === "prayer" ? "Prayer Request" : "Share a Testimony"}</h3>
+              <h3 className="text-2xl font-bold mb-1">
+                {activeForm === "prayer" ? "Gebedsverzoek" : "Getuigenis Delen"}
+              </h3>
               <p className="text-gray-600 mb-4">
                 {activeForm === "prayer"
-                  ? "Send us your prayer request. Our prayer team will stand with you in prayer."
-                  : "Share your testimony — we celebrate what God has done!"}
+                  ? "Stuur ons uw gebedsverzoek. Ons gebedsteam staat samen met u in gebed."
+                  : "Deel uw getuigenis — wij vieren wat God heeft gedaan!"}
               </p>
 
               <form onSubmit={submitForm} className="flex flex-col gap-3">
@@ -162,7 +170,7 @@ export default function ContactPage() {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Full name"
+                  placeholder="Volledige naam"
                   className="p-3 border rounded"
                   required
                 />
@@ -170,7 +178,7 @@ export default function ContactPage() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Email address"
+                  placeholder="E-mailadres"
                   type="email"
                   className="p-3 border rounded"
                 />
@@ -178,14 +186,14 @@ export default function ContactPage() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  placeholder="Phone (optional)"
+                  placeholder="Telefoon (optioneel)"
                   className="p-3 border rounded"
                 />
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder={activeForm === "prayer" ? "Your prayer request..." : "Your testimony..."}
+                  placeholder={activeForm === "prayer" ? "Uw gebedsverzoek..." : "Uw getuigenis..."}
                   className="p-3 border rounded h-36 resize-none"
                   required
                 />
@@ -196,7 +204,7 @@ export default function ContactPage() {
                     className="flex-1 py-3 rounded-md font-semibold"
                     style={{ backgroundColor: activeForm === "prayer" ? "#1A237E" : "#6A1B9A", color: "white" }}
                   >
-                    Submit
+                    Verzenden
                   </button>
 
                   <button
@@ -207,7 +215,7 @@ export default function ContactPage() {
                       setFormData({ name: "", email: "", phone: "", message: "" });
                     }}
                   >
-                    Cancel
+                    Annuleren
                   </button>
                 </div>
               </form>

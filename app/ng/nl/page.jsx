@@ -1,11 +1,11 @@
 'use client';
 
 import React from 'react';
-import HeroNL from '@/components/nl/HeroNL';
-import Overlap1 from '@/components/nl/Overlap1NL';
-import Mission1 from '@/components/nl/Mission1NL';
-import JoinUs from '@/components/nl/JoinUsNL';
-import StoriesArticles from '@/components/nl/StoriesNL';
+import HeroNL from '@/components/Netherlands/Heronl';
+import Overlap1 from '@/components/Netherlands/Overlap1nl';
+import Mission1 from '@/components/Netherlands/Mission1nl';
+import JoinUs from '@/components/Netherlands/JoinUsnl';
+import StoriesArticles from '@/components/Netherlands/Storiesnl';
 import TestimonialFAQ from '@/components/TestimonialFAQ';
 
 export default function HomePage() {

@@ -39,8 +39,7 @@ export default function ContactPage() {
         <Image
           src={assets.UNAWARE}
           alt="Church hero"
-          fill
-          className="object-cover opacity-70"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-black/50" />
 

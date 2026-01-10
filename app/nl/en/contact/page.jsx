@@ -24,9 +24,7 @@ export default function ContactPage() {
 
   function submitForm(e) {
     e.preventDefault();
-    // TODO: Wire this to Firebase / Supabase / Email API
     console.log("Submit", { type: activeForm, ...formData, createdAt: new Date().toISOString() });
-    // optimistic UX
     setFormData({ name: "", email: "", phone: "", message: "" });
     setActiveForm(null);
     alert("Thank you — your submission has been received.");
@@ -39,11 +37,9 @@ export default function ContactPage() {
         <Image
           src={assets.UNAWARE}
           alt="Church hero"
-          fill
-          className="object-cover opacity-70"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
         />
         <div className="absolute inset-0 bg-black/50" />
-
         <div className="relative z-10 flex items-center h-full px-6 md:px-20">
           <motion.div initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }}>
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">Contact & Connect</h1>
@@ -122,8 +118,10 @@ export default function ContactPage() {
                 <iframe
                   className="w-full h-full"
                   loading="lazy"
-                  title="Church location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.819...."
+                  title="Church location - Abuja"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.6000000000005!2d7.404170215334208!3d9.067810992522477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0a3d3d7c7f37%3A0x1234567890abcdef!2sGwarinpa%2C%20Abuja%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1700000000000!5m2!1sen!2sng"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
             </motion.div>

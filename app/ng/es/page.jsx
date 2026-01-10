@@ -1,16 +1,16 @@
 'use client';
 
 import React from 'react';
-import Hero from '@/components/es/HeroES';
-import Overlap1 from '@/components/es/Overlap1ES';
-import Mission1 from '@/components/es/Mission1ES';
-import JoinUs from '@/components/es/JoinUsES';
-import StoriesArticles from '@/components/es/StoriesES';
-import TestimonialFAQ from '@/components/es/TestimonialFAQES';
+import Hero from '@/components/Hero';
+import Overlap1 from '@/components/Overlap1';
+import Mission1 from '@/components/Mission1';
+import JoinUs from '@/components/JoinUs';
+import StoriesArticles from '@/components/StoriesArticles';
+import TestimonialFAQ from '@/components/TestimonialFAQ';
 
 export default function HomePage() {
   return (
-    <div className="w-full">
+    <div className="md:w-full">
       <Hero />
       <Overlap1 />
       <Mission1 />
