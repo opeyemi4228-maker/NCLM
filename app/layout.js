@@ -2,7 +2,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { AppContextProvider } from "@/context/AppContext";
 import { RegionalProvider } from "@/context/RegionalContext";
-import { Toaster } from "react-hot-toast";
+import ToasterWrapper from "@/components/ToasterWrapper";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         className={`${montserrat.className} antialiased text-gray-700 m-0 p-0 overflow-x-hidden`} 
         suppressHydrationWarning={true}
       >
-        <Toaster position="top-center" />
+        <ToasterWrapper />
         <AppContextProvider>
           <RegionalProvider>
             {children}

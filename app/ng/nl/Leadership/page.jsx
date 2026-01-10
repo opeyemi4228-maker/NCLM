@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import {assets} from '@/assets/assets';
+import { assets } from '@/assets/assets';
 import Image from 'next/image';
 
 const leaders = [
