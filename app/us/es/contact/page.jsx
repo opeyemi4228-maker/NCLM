@@ -6,6 +6,8 @@ import { FiX, FiMapPin, FiPhone, FiMail } from "react-icons/fi";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
 
+export const dynamic = 'force-dynamic';
+
 /*
 ContactPage.jsx
 - Two CTA buttons: Prayer Request and Testimony (open respective modal forms)

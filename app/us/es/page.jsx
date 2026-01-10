@@ -8,6 +8,8 @@ import JoinUs from '@/components/Vene/JoinUses';
 import StoriesArticles from '@/components/Vene/Storieses';
 import TestimonialFAQ from '@/components/TestimonialFAQ';
 
+export const dynamic = 'force-dynamic';
+
 export default function HomePage() {
   return (
     <div className="w-full">

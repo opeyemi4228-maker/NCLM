@@ -9,6 +9,8 @@ import JoinUs from "@/components/JoinUs";
 import StoriesArticles from "@/components/StoriesArticles";
 import TestimonialFAQ from "@/components/TestimonialFAQ";
 
+export const dynamic = 'force-dynamic';
+
 const Navbar = dynamic(() => import("@/components/Navbar"), { ssr: false });
 
 const Home = () => {
