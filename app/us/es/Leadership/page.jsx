@@ -7,6 +7,8 @@ import { assets } from '@/assets/assets';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
+export const dynamic = 'force-dynamic';
+
 const leaders = [
   {
     id: 1,
@@ -173,7 +175,7 @@ const departments = [
   }
 ];
 
-const LeadershipSection = () => {
+export default function LeadershipSection() {
   const [selectedLeader, setSelectedLeader] = useState(null);
 
   return (
@@ -506,5 +508,3 @@ const LeadershipSection = () => {
     </div>
   );
 }
-
-export default dynamic(() => Promise.resolve(LeadershipSection), { ssr: false })
