@@ -1,5 +1,7 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 // NOTE: import assets as the default export (adjust if your assets file uses named exports)
