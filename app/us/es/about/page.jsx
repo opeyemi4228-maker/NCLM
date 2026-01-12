@@ -1,11 +1,10 @@
 'use client';
 
+export const dynamic = 'force-dynamic';
+
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { assets } from '@/assets/assets';
-
-export const dynamic = 'force-dynamic';
 
 const values = [
   {
