@@ -56,13 +56,13 @@ import churchworship from "./churchworship.jpg";
 import join from "./join.jpg";
 import welcome from "./welcome.jpg";
 import Action from "./Action.webp";
+import Apostle2 from "./Apostle 2.webp";
 import Apostle3 from "./Apostle 3.webp";
 import Apostle4 from "./Apostle 4.webp";
 import PastorMarlien1 from "./PastorMarlien1.jpg";
 import PastorCharles1 from "./PastorCharles1.jpg";
 // Use static paths for images used in pages to avoid prerendering issues
 const Apostle1 = "/assets/Apostle1.webp";
-const Apostle2 = "/assets/Apostle2.webp";
 const Apostle5 = "/assets/Apostle5.webp";
 
 
