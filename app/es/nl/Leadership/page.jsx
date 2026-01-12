@@ -2,173 +2,172 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-// NOTA: importa assets como exportación por defecto (ajusta si tu archivo de assets usa exportaciones nombradas)
+// NOTE: import assets as the default export (adjust if your assets file uses named exports)
 import { assets } from '@/assets/assets';
 import Image from 'next/image';
-export const dynamic = 'force-dynamic';
 
 const leaders = [
   {
     id: 1,
-    name: 'Apóstol Kingsley Lawend',
-    role: 'Pastor Principal, New Creation Life Church International',
-    image: assets.Apostle2,
+    name: 'Apostle Kingsley Lawend',
+    role: 'Hoofd Pastor, New Creation Life Church International',
+    image: assets.Apostle3,
     isLocalAsset: false,
-    bio: 'El Apóstol Kingsley Lawend es el Pastor Principal de New Creation Life Church International. Llamado por Dios a la edad de 13 años, dedicó su vida al servicio de Dios tras un encuentro transformador con el Espíritu Santo. Nacido en Lagos, Nigeria, se trasladó a los Países Bajos en sus veintitantos, donde Dios lo preparó estratégicamente para formación, servicio y ministerio global. Es un predicador y maestro dinámico, un salmista ungido, líder de adoración, compositor y artista de grabación. Su pasión por Dios y amor por las personas se reflejan en su estilo de vida y ministerio, con un profundo deseo de ver un avivamiento y la manifestación del Espíritu Santo como en el libro de los Hechos.',
+    bio: 'Apostle Kingsley Lawend is de hoofd pastor van New Creation Life Church International. Op 13-jarige leeftijd geroepen door God, wijdde hij zijn leven aan de dienst van God na een levensveranderende ontmoeting met de Heilige Geest. Geboren in Lagos, Nigeria, verhuisde hij in zijn vroege twintigernaar Nederland, waar God hem strategisch plaatste voor training, bediening en voorbereiding voor wereldwijde bediening. Hij is een dynamische prediker en leraar van het Woord, een begaafde en gezalfde psalmist, aanbiddingsleider, songwriter en opnameartiest. Zijn passie voor God en liefde voor mensen zijn zichtbaar in zijn levensstijl en bediening, met een sterke wens om een nieuwe beweging van God en de manifestatie van de Heilige Geest te zien zoals in het boek Handelingen.',
     expertise: [
-      'Enseñanza y predicación bíblica',
-      'Ministerio profético y apostólico',
-      'Liderazgo de adoración y salmodia'
+      'Bijbels Onderwijs & Prediking',
+      'Profetische & Apostolische Bediening',
+      'Aanbiddingsleiderschap & Psalmgezang'
     ],
     social: {
       twitter: '#',
       linkedin: '#',
       email: 'apostlekingsleylawend@nclm.org'
     },
-    quote: 'Mi mayor deseo es que esta generación camine en el poder de Dios y en la obra manifiesta del Espíritu Santo, tal como en el libro de los Hechos.',
+    quote: "Mijn verlangen is dat deze generatie in de kracht van God en het zichtbare werk van de Heilige Geest wandelt, net zoals in het boek Handelingen.",
     achievements: [
-      'Fundó New Creation Life Church International en 2010',
-      'Registró y estableció el ministerio en 2012',
-      'Sirve globalmente como predicador, maestro y ministro de adoración'
+      'Nieuwe Creatie Leven Kerk International opgericht in 2010',
+      'Stichting geregistreerd en opgericht in 2012',
+      'Diende wereldwijd als prediker, leraar en aanbiddingsminister'
     ]
   },
 
   {
     id: 2,
-    name: 'Pastora Marlien Lawend',
-    role: 'Pastora Asociada, Ministra Ordenada',
+    name: 'Pastor Marlien Lawend',
+    role: 'Associate Pastor, Gewijde Minister',
     image: assets.PastorMarlien1,
     isLocalAsset: false,
-    bio: 'La Pastora Marlien Lawend es una ministra ordenada del Evangelio de Jesucristo y sirve fielmente junto a su esposo, el Apóstol Kingsley Lawend, en New Creation Life Church International. Tiene una profunda pasión por Dios, por las personas y por la obra del ministerio, mostrando el amor de Cristo a través de su vida y servicio. Con un fuerte compromiso hacia el crecimiento espiritual, el discipulado y el cuidado pastoral, ministra con gracia, sabiduría y humildad, impactando vidas mediante la enseñanza, la oración y el liderazgo compasivo.',
+    bio: "Pastor Marlien Lawend is een gewijde dienares van het evangelie van Jezus Christus en dient trouw naast haar man, Apostle Kingsley Lawend, in New Creation Life Church International. Ze heeft een diepe passie voor God, voor mensen en voor het werk van de bediening en weerspiegelt Christus' liefde door haar leven en dienstverlening. Met een sterke toewijding aan geestelijke groei, discipelschap en pastorale zorg, dient ze met genade, wijsheid en nederigheid en raakt levens door onderwijs, gebed en compassievol leiderschap.",
     expertise: [
-      'Cuidado pastoral y discipulado',
-      'Liderazgo en ministerios de mujeres',
-      'Enseñanza y consejería'
+      'Pastorale Zorg & Discipelschap',
+      'Leiderschap in Vrouwenbediening',
+      'Onderwijs & Counseling'
     ],
     social: {
       twitter: '#',
       linkedin: '#',
       email: 'pastormarlienlawend@nclm.org'
     },
-    quote: 'Una vida entregada a Dios se convierte en un vaso a través del cual Su amor, sanidad y propósito se manifiestan.',
+    quote: 'Een leven dat aan God is toegewijd, wordt een vat waardoor Zijn liefde, genezing en doel zichtbaar worden.',
     achievements: [
-      'Ministra ordenada del Evangelio de Jesucristo',
-      'Co-lídera en la dirección de New Creation Life Church International',
-      'Activamente involucrada en enseñanza, discipulado y ministerio pastoral'
+      'Gewijde dienares van het evangelie van Jezus Christus',
+      'Samenwerker in het leiderschap van New Creation Life Church International',
+      'Actief betrokken bij onderwijs, discipelschap en pastorale bediening'
     ]
   },
 
   {
     id: 3,
     name: 'Pastor Charles Adakole',
-    role: 'Pastor Residente, Iglesia de Abuja',
+    role: 'Resident Pastor, Abuja Kerk',
     image: assets.PastorCharles1,
     isLocalAsset: false,
-    bio: 'El Pastor Charles Adakole sirve como Pastor Residente de la iglesia en Abuja, aportando una fuerte gracia pastoral con el mandato de edificar una comunidad eclesial centrada en la Palabra y guiada por el Espíritu. Está comprometido con la enseñanza bíblica sólida, el discipulado y la vida cristiana práctica, ayudando a los creyentes a crecer en fe, propósito y madurez espiritual.',
+    bio: "Pastor Charles Adakole dient als resident pastor van de Abuja Kerk en brengt een sterke pastorale genade met zich mee, met een duidelijke opdracht om een levendige, Woord-centrische en door de Geest geleide kerkgemeenschap te bouwen. Hij zet zich in voor gezond bijbels onderwijs, discipelschap en praktisch christelijk leven, en helpt gelovigen groeien in geloof, doel en geestelijke volwassenheid. Met een herdershart en een passie voor uitmuntendheid, werkt hij om levens te zien veranderen door de kracht van het Woord en het werk van de Heilige Geest.",
     expertise: [
-      'Enseñanza bíblica y discipulado',
-      'Liderazgo pastoral',
-      'Crecimiento de iglesia y construcción comunitaria'
+      'Bijbels Onderwijs & Discipelschap',
+      'Pastoraal Leiderschap',
+      'Kerkgroei & Gemeenschapsopbouw'
     ],
     social: {
       twitter: '#',
       linkedin: '#',
       email: 'pastorcharles@nclm.org'
     },
-    quote: 'Una iglesia saludable se edifica sobre la Palabra, se sostiene por amor y se empodera por el Espíritu.',
+    quote: 'Een gezonde kerk is gebouwd op het Woord, gedragen door liefde en versterkt door de Geest.',
     achievements: [
-      'Supervisa y lidera la congregación de la iglesia en Abuja',
-      'Comprometido con el discipulado y el crecimiento espiritual de los miembros',
-      'Desempeña un papel clave en el fortalecimiento de la estructura e impacto comunitario de la iglesia'
+      'Leidt en overziet de congregatie van de Abuja Kerk',
+      'Toegewijd aan discipelschap en geestelijke groei van leden',
+      'Speelt een sleutelrol bij het versterken van kerkstructuur en gemeenschapsimpact'
     ]
   },
 
   {
     id: 4,
-    name: 'Ministra Shenn Damon',
-    role: 'Ministra, Iglesia en Países Bajos',
-    image: assets.Apostle3,
+    name: 'Minister Shenn Damon',
+    role: 'Minister, Nederland Kerk',
+    image: assets.Apostle4,
     isLocalAsset: false,
-    bio: 'La Ministra Shenn Damon sirve en el liderazgo de la iglesia en los Países Bajos, apoyando fielmente la visión de New Creation Life Church International. Ministeria con dedicación, humildad y un fuerte compromiso con la Palabra de Dios, contribuyendo al crecimiento espiritual, al discipulado y al fortalecimiento de la comunidad eclesial.',
+    bio: 'Minister Shenn Damon dient in het leiderschap van de Nederland Kerk en ondersteunt trouw de visie van New Creation Life Church International. Ze dient met toewijding, nederigheid en een sterke inzet voor het Woord van God, en draagt bij aan geestelijke groei, discipelschap en versterking van de kerkgemeenschap. Haar hart voor dienstbaarheid en uitmuntendheid is zichtbaar in haar passie om levens in Christus op te bouwen en de kerk stevig te vestigen in geloof en liefde.',
     expertise: [
-      'Enseñanza y discipulado',
-      'Administración eclesial y ministerios de apoyo',
-      'Oración e intercesión'
+      'Onderwijs & Discipelschap',
+      'Kerkadministratie & Ondersteunende Bediening',
+      'Gebed & Voorbede'
     ],
     social: {
       twitter: '#',
       linkedin: '#',
       email: 'ministersheandamon@nclm.org'
     },
-    quote: 'El servicio fiel en la casa de Dios produce fruto duradero en las vidas de Su pueblo.',
+    quote: "Trouw dienst in Gods huis brengt blijvende vrucht voort in de levens van Zijn mensen.",
     achievements: [
-      'Sirve en el liderazgo de la iglesia en los Países Bajos',
-      'Activamente involucrada en discipulado y crecimiento de la iglesia',
-      'Apoya la visión y misión de New Creation Life Church International'
+      'Dient in het leiderschap van de Nederland Kerk',
+      'Actief betrokken bij discipelschap en kerkgroei',
+      'Ondersteunt de visie en missie van New Creation Life Church International'
     ]
   },
 
   {
     id: 5,
-    name: 'Ministro Victor Gonzalez',
-    role: 'Pastor, Iglesia en Venezuela',
-    image: assets.Apostle3,
+    name: 'Minister Victor Gonzalez',
+    role: 'Pastor, Venezuela Kerk',
+    image: assets.Apostle4,
     isLocalAsset: false,
-    bio: 'El Ministro Victor Gonzalez sirve como pastor de la iglesia en Venezuela, promoviendo la visión de New Creation Life Church International en su región. Es un servidor dedicado con pasión por el liderazgo pastoral, el discipulado y la construcción de una comunidad eclesial sólida centrada en Cristo. A través de la enseñanza y el liderazgo pastoral, se compromete a ver vidas transformadas y creyentes arraigados en la Palabra y empoderados por el Espíritu Santo.',
+    bio: "Minister Victor Gonzalez dient als pastor van de Venezuela Kerk en bevordert trouw de visie van New Creation Life Church International in zijn regio. Hij is een toegewijde dienaar van God met een hart voor pastoraal leiderschap, discipelschap en het opbouwen van een sterke, op Christus gerichte kerkgemeenschap. Door gezond onderwijs en zorg voor Gods volk, zet hij zich in om levens te zien transformeren en gelovigen stevig geworteld in het Woord en bekrachtigd door de Heilige Geest.",
     expertise: [
-      'Liderazgo pastoral',
-      'Enseñanza y discipulado',
-      'Crecimiento e impacto comunitario de la iglesia'
+      'Pastoraal Leiderschap',
+      'Onderwijs & Discipelschap',
+      'Kerkgroei & Gemeenschapsontwikkeling'
     ],
     social: {
       twitter: '#',
       linkedin: '#',
       email: 'ministervictor@nclm.org'
     },
-    quote: 'Cuando la Palabra de Dios se vive y se enseña con fe, las vidas cambian y las comunidades se transforman.',
+    quote: 'Wanneer het Woord van God met geloof wordt geleefd en onderwezen, worden levens veranderd en gemeenschappen getransformeerd.',
     achievements: [
-      'Lidera y supervisa la congregación de la iglesia en Venezuela',
-      'Comprometido con el discipulado y la madurez espiritual de los creyentes',
-      'Desempeña un papel clave en la expansión del impacto de la iglesia en la región'
+      'Leidt en overziet de congregatie van de Venezuela Kerk',
+      'Toegewijd aan discipelschap en geestelijke volwassenheid van gelovigen',
+      "Speelt een sleutelrol in het vergroten van de impact van de kerk in de regio"
     ]
   },
 ];
 
 const departments = [
   {
-    name: 'Adoración y Artes Creativas',
+    name: 'Aanbidding & Creatieve Kunsten',
     icon: 'https://img.icons8.com/plasticine/100/apple-music.png',
-    description: 'Creando experiencias de adoración poderosas que transforman vidas',
+    description: 'Het creëren van krachtige aanbiddingservaringen die levens transformeren',
     team: 45
   },
   {
-    name: 'Ministerio de Niños y Familia',
+    name: 'Kinderen & Gezin Bediening',
     icon: 'https://img.icons8.com/bubbles/100/family.png',
-    description: 'Formando bases espirituales sólidas para la próxima generación',
+    description: 'Opbouwen van sterke geestelijke fundamenten voor de volgende generatie',
     team: 32
   },
   {
-    name: 'Alcance Comunitario',
+    name: 'Gemeenschapsbereik',
     icon: 'https://img.icons8.com/plasticine/100/conference-call.png',
-    description: 'Sirviendo a nuestra comunidad con el amor de Cristo',
+    description: 'Onze gemeenschap dienen met de liefde van Christus',
     team: 28
   },
   {
-    name: 'Discipulado y Crecimiento',
+    name: 'Discipelschap & Groei',
     icon: 'https://img.icons8.com/clouds/100/training.png',
-    description: 'Equipando a los creyentes para crecer en fe y madurez',
+    description: 'Gelovigen toerusten om te groeien in geloof en volwassenheid',
     team: 24
   },
   {
-    name: 'Medios y Comunicaciones',
+    name: 'Media & Communicatie',
     icon: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/100/external-media-new-media-flaticons-lineal-color-flat-icons-3.png',
-    description: 'Difundiendo el Evangelio a través de plataformas digitales',
+    description: 'Het Evangelie verspreiden via digitale platforms',
     team: 18
   },
   {
-    name: 'Oración e Intercesión',
+    name: 'Gebed & Voorbede',
     icon: 'https://img.icons8.com/doodle/100/pray.png',
-    description: 'Construyendo una casa de oración para todas las naciones',
+    description: 'Een huis van gebed bouwen voor alle naties',
     team: 36
   }
 ];
@@ -179,7 +178,7 @@ export default function LeadershipSection() {
   return (
     <div className="bg-gradient-to-b from-white via-gray-50 to-white">
       
-      {/* SECCIÓN HERO */}
+      {/* HERO SECTION */}
       <section className="relative overflow-hidden bg-gradient-to-br from-purple-800 via-purple-950 to-orange-800 text-white py-24">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl" />
@@ -194,48 +193,48 @@ export default function LeadershipSection() {
             className="text-center max-w-4xl mx-auto"
           >
             <span className="inline-block mb-4 text-sm font-bold tracking-wider uppercase bg-white/20 backdrop-blur px-5 py-2 rounded-full">
-              Conoce a nuestro equipo de liderazgo
+              Ontmoet ons leiderschapsteam
             </span>
             
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
-              Formando líderes que
-              <span className="block">Transforman naciones</span>
+              Leiders Opleiden Die
+              <span className="block">Naties Transformeren</span>
             </h1>
             
             <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-              Nuestro equipo de liderazgo está comprometido a formar, equipar y enviar líderes piadosos que tendrán un impacto duradero para el Reino de Dios en toda la tierra.
+              Ons leiderschapsteam zet zich in om godvruchtige leiders op te voeden, toe te rusten en uit te zenden die een blijvende impact zullen hebben voor het Koninkrijk van God over de hele wereld.
             </p>
 
             <div className="flex flex-wrap justify-center gap-8 mt-12 pt-8 border-t border-white/20">
               <div className="text-center">
                 <div className="text-4xl font-black mb-1">25+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">Años de ministerio</div>
+                <div className="text-sm text-white/80 uppercase tracking-wide">Jaren Dienst</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-black mb-1">50+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">Iglesias plantadas</div>
+                <div className="text-sm text-white/80 uppercase tracking-wide">Gestichte Kerken</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-black mb-1">30+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">Naciones alcanzadas</div>
+                <div className="text-sm text-white/80 uppercase tracking-wide">Bereikte Naties</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-black mb-1">1000+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">Líderes formados</div>
+                <div className="text-sm text-white/80 uppercase tracking-wide">Opgeleide Leiders</div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* GRID DEL EQUIPO DE LIDERAZGO */}
+      {/* LEADERSHIP TEAM GRID */}
       <section className="max-w-7xl mx-auto px-6 sm:px-10 py-20">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-black text-gray-900 mb-4">
-            Nuestro liderazgo pastoral
+            Ons pastorale leiderschap
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Líderes experimentados, ungidos y apasionados dedicados al cuidado del pueblo de Dios y al avance de Su reino.
+            Ervaren, gezalfde en gepassioneerde leiders toegewijd aan het hoeden van Gods volk en het bevorderen van Zijn koninkrijk.
           </p>
         </div>
 
@@ -251,9 +250,9 @@ export default function LeadershipSection() {
               onClick={() => setSelectedLeader(leader)}
             >
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:border-red-300 hover:shadow-2xl transition-all">
-                {/* Imagen */}
+                {/* Image */}
                 <div className="relative h-80 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                  {/* Usar next/image con 'fill' para optimizar la imagen y hacerla responsiva */}
+                  {/* Use next/image with 'fill' so the image is optimized and responsive */}
                   <Image
                     src={leader.image}
                     alt={leader.name}
@@ -263,20 +262,20 @@ export default function LeadershipSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   
-                  {/* Superposición al pasar el cursor */}
+                  {/* Hover Overlay */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <div className="flex gap-3">
-                      <a href={leader.social.twitter} className="w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition">
+                      <a href={leader.social.twitter} className="w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition" aria-label="Twitter">
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                         </svg>
                       </a>
-                      <a href={leader.social.linkedin} className="w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition">
+                      <a href={leader.social.linkedin} className="w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition" aria-label="LinkedIn">
                         <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                           <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                       </a>
-                      <a href={`mailto:${leader.social.email}`} className="w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition">
+                      <a href={`mailto:${leader.social.email}`} className="w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition" aria-label="Email">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
@@ -285,7 +284,7 @@ export default function LeadershipSection() {
                   </div>
                 </div>
 
-                {/* Contenido */}
+                {/* Content */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-red-600 transition-colors">
                     {leader.name}
@@ -306,7 +305,7 @@ export default function LeadershipSection() {
                   </div>
 
                   <button className="text-red-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-                    Ver perfil completo
+                    Bekijk volledig profiel
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -318,15 +317,15 @@ export default function LeadershipSection() {
         </div>
       </section>
 
-      {/* DEPARTAMENTOS MINISTERIALES */}
+      {/* MINISTRY DEPARTMENTS */}
       <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-gray-900 mb-4">
-              Departamentos Ministeriales
+              Ministerie-afdelingen
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Nuestros equipos dedicados trabajan juntos para cumplir la Gran Comisión y servir a nuestra comunidad con excelencia.
+              Onze toegewijde teams werken samen om de Grote Opdracht te vervullen en onze gemeenschap met uitmuntendheid te dienen.
             </p>
           </div>
 
@@ -347,7 +346,7 @@ export default function LeadershipSection() {
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
                   </svg>
-                  <span className="font-semibold">{dept.team} miembros del equipo</span>
+                  <span className="font-semibold">{dept.team} teamleden</span>
                 </div>
               </motion.div>
             ))}
@@ -355,7 +354,7 @@ export default function LeadershipSection() {
         </div>
       </section>
 
-      {/* LLAMADO A LA ACCIÓN */}
+      {/* CALL TO ACTION */}
       <section className="max-w-7xl mx-auto px-6 sm:px-10 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -369,24 +368,24 @@ export default function LeadershipSection() {
 
           <div className="relative z-10">
             <h2 className="text-4xl font-black mb-4">
-              Únete a nosotros hoy
+              Doe vandaag mee
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-              ¿Tienes pasión por servir a Dios y a Su pueblo? Siempre estamos buscando personas con dones, llamadas y compromiso para unirse a nuestro ministerio.
+              Ben je gepassioneerd om God en Zijn volk te dienen? We zoeken altijd begaafde, geroepen en toegewijde personen om ons ministerie te versterken.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <button className="bg-white text-red-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">
-                Visita una de nuestras sucursales hoy
+                Bezoek onze vestiging
               </button>
               <button className="bg-white/10 backdrop-blur border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition">
-                Hazte voluntario
+                Vrijwilliger worden
               </button>
             </div>
           </div>
         </motion.div>
       </section>
 
-      {/* MODAL DE DETALLE DEL LÍDER - DESPLAZABLE Y POSICIONADO DEBAJO DE LA BARRA DE NAVEGACIÓN */}
+      {/* LEADER DETAIL MODAL - SCROLLABLE & POSITIONED BELOW NAVBAR */}
       <AnimatePresence>
         {selectedLeader && (
           <motion.div
@@ -396,7 +395,7 @@ export default function LeadershipSection() {
             className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
             onClick={() => setSelectedLeader(null)}
           >
-            {/* Contenedor desplazable */}
+            {/* Scrollable Container (positioned 50px below navbar) */}
             <div className="fixed inset-0 overflow-y-auto pt-[50px]">
               <div className="min-h-[calc(100vh-50px)] flex items-start justify-center p-4 py-8">
                 <motion.div
@@ -407,7 +406,7 @@ export default function LeadershipSection() {
                   className="bg-white rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl my-8"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  {/* Encabezado */}
+                  {/* Header */}
                   <div className="relative h-72 bg-gradient-to-br from-red-600 to-orange-600">
                     <div className="absolute inset-0 opacity-20">
                       <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl" />
@@ -415,6 +414,7 @@ export default function LeadershipSection() {
                     <button
                       onClick={() => setSelectedLeader(null)}
                       className="absolute top-6 right-6 w-10 h-10 bg-white/20 backdrop-blur hover:bg-white/30 rounded-full flex items-center justify-center transition z-10"
+                      aria-label="Sluiten"
                     >
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -424,7 +424,7 @@ export default function LeadershipSection() {
                     <div className="relative h-full flex items-end p-8">
                       <div className="flex items-end gap-6">
                         <div className="relative w-32 h-32 rounded-2xl border-4 border-white shadow-xl overflow-hidden flex-shrink-0">
-                          {/* Avatar del modal usando next/image fill */}
+                          {/* Modal avatar using next/image fill */}
                           <Image
                             src={selectedLeader.image}
                             alt={selectedLeader.name}
@@ -440,9 +440,9 @@ export default function LeadershipSection() {
                     </div>
                   </div>
 
-                  {/* Contenido */}
+                  {/* Content */}
                   <div className="p-8">
-                    {/* Cita */}
+                    {/* Quote */}
                     <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-2xl mb-8 border-l-4 border-red-600">
                       <svg className="w-8 h-8 text-red-600 mb-3" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
@@ -450,15 +450,15 @@ export default function LeadershipSection() {
                       <p className="text-xl text-gray-700 italic font-medium">{selectedLeader.quote}</p>
                     </div>
 
-                    {/* Sobre */}
+                    {/* Bio */}
                     <div className="mb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Sobre</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Over</h3>
                       <p className="text-gray-600 leading-relaxed">{selectedLeader.bio}</p>
                     </div>
 
-                    {/* Áreas de experiencia */}
+                    {/* Expertise */}
                     <div className="mb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Áreas de experiencia</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Expertisegebieden</h3>
                       <div className="flex flex-wrap gap-3">
                         {selectedLeader.expertise.map((skill, i) => (
                           <span key={i} className="px-5 py-2 bg-red-50 text-red-600 font-semibold rounded-full border border-red-200">
@@ -468,9 +468,9 @@ export default function LeadershipSection() {
                       </div>
                     </div>
 
-                    {/* Logros */}
+                    {/* Achievements */}
                     <div className="mb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Logros clave</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Belangrijkste prestaties</h3>
                       <ul className="space-y-3">
                         {selectedLeader.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start gap-3">
@@ -483,16 +483,16 @@ export default function LeadershipSection() {
                       </ul>
                     </div>
 
-                    {/* Contacto */}
+                    {/* Contact */}
                     <div className="flex flex-wrap gap-3 pt-6 border-t border-gray-200">
                       <a href={selectedLeader.social.twitter} className="flex-1 min-w-[150px] bg-gray-900 text-white py-3 px-6 rounded-xl font-semibold hover:bg-gray-800 transition text-center">
-                        Seguir en Twitter
+                        Volgen op Twitter
                       </a>
                       <a href={selectedLeader.social.linkedin} className="flex-1 min-w-[150px] bg-blue-600 text-white py-3 px-6 rounded-xl font-semibold hover:bg-blue-700 transition text-center">
-                        Conectar en LinkedIn
+                        Verbinden op LinkedIn
                       </a>
                       <a href={`mailto:${selectedLeader.social.email}`} className="flex-1 min-w-[150px] bg-red-600 text-white py-3 px-6 rounded-xl font-semibold hover:bg-red-700 transition text-center">
-                        Enviar correo
+                        E-mail sturen
                       </a>
                     </div>
                   </div>

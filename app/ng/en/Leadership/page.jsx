@@ -6,8 +6,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { assets } from '@/assets/assets';
 import Image from 'next/image';
 
-export const dynamic = 'force-dynamic';
-
 const leaders = [
   {
     id: 1,
@@ -90,7 +88,7 @@ const leaders = [
     role: 'Netherlands Church, Minister',
     image: assets.Apostle4,
     isLocalAsset: false,
-    bio: 'Minister Shean Damon serves in leadership at the Netherlands Church, faithfully supporting the vision of New Creation Life Church International. She ministers with dedication, humility, and a strong commitment to the Word of God, contributing to the spiritual growth, discipleship, and strengthening of the church community. Her heart for service and excellence is evident in her passion to see lives built up in Christ and the church firmly established in faith and love.',
+    bio: 'Minister Shenn Damon serves in leadership at the Netherlands Church, faithfully supporting the vision of New Creation Life Church International. She ministers with dedication, humility, and a strong commitment to the Word of God, contributing to the spiritual growth, discipleship, and strengthening of the church community. Her heart for service and excellence is evident in her passion to see lives built up in Christ and the church firmly established in faith and love.',
     expertise: [
       'Teaching & Discipleship',
       'Church Administration & Support Ministry',

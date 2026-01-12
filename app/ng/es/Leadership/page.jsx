@@ -2,174 +2,172 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-// NOTE: import assets as the default export (adjust if your assets file uses named exports)
+// NOTA: importa assets como exportación por defecto (ajusta si tu archivo de assets usa exportaciones nombradas)
 import { assets } from '@/assets/assets';
 import Image from 'next/image';
-
-export const dynamic = 'force-dynamic';
 
 const leaders = [
   {
     id: 1,
-    name: 'Apostle Kingsley Lawend',
-    role: 'Lead Pastor, New Creation Life Church International',
-    image: assets.Apostle3,
+    name: 'Apóstol Kingsley Lawend',
+    role: 'Pastor Principal, New Creation Life Church International',
+    image: assets.Apostle2,
     isLocalAsset: false,
-    bio: 'Apostle Kingsley Lawend is the Lead Pastor of New Creation Life Church International. Called by God at the age of 13, he committed his life to the service of God following a life-changing encounter with the Holy Spirit. Born in Lagos, Nigeria, he later relocated to The Netherlands in his early twenties, where God strategically positioned him for training, service, and preparation for global ministry. He is a dynamic preacher and teacher of the Word, a gifted and anointed psalmist, worship leader, songwriter, and recording artist. His passion for God and love for people are evident in his lifestyle and ministry, with a strong desire to see a fresh move of God and the manifestation of the Holy Spirit as recorded in the book of Acts.',
+    bio: 'El Apóstol Kingsley Lawend es el Pastor Principal de New Creation Life Church International. Llamado por Dios a la edad de 13 años, dedicó su vida al servicio de Dios tras un encuentro transformador con el Espíritu Santo. Nacido en Lagos, Nigeria, se trasladó a los Países Bajos en sus veintitantos, donde Dios lo preparó estratégicamente para formación, servicio y ministerio global. Es un predicador y maestro dinámico, un salmista ungido, líder de adoración, compositor y artista de grabación. Su pasión por Dios y amor por las personas se reflejan en su estilo de vida y ministerio, con un profundo deseo de ver un avivamiento y la manifestación del Espíritu Santo como en el libro de los Hechos.',
     expertise: [
-      'Biblical Teaching & Preaching',
-      'Prophetic & Apostolic Ministry',
-      'Worship Leadership & Psalmistry'
+      'Enseñanza y predicación bíblica',
+      'Ministerio profético y apostólico',
+      'Liderazgo de adoración y salmodia'
     ],
     social: {
       twitter: '#',
       linkedin: '#',
       email: 'apostlekingsleylawend@nclm.org'
     },
-    quote: "My heart's desire is to see this generation walk in the power of God and the manifest work of the Holy Spirit, just as in the book of Acts.",
+    quote: 'Mi mayor deseo es que esta generación camine en el poder de Dios y en la obra manifiesta del Espíritu Santo, tal como en el libro de los Hechos.',
     achievements: [
-      'Founded New Creation Life Church International in 2010',
-      'Established and registered the ministry in 2012',
-      'Serves globally as a preacher, teacher, and worship minister'
+      'Fundó New Creation Life Church International en 2010',
+      'Registró y estableció el ministerio en 2012',
+      'Sirve globalmente como predicador, maestro y ministro de adoración'
     ]
   },
 
   {
     id: 2,
-    name: 'Pastor Marlien Lawend',
-    role: 'Associate Pastor, Ordained Minister',
+    name: 'Pastora Marlien Lawend',
+    role: 'Pastora Asociada, Ministra Ordenada',
     image: assets.PastorMarlien1,
     isLocalAsset: false,
-    bio: "Pastor Marlien Lawend is an ordained minister of the Gospel of Jesus Christ and serves faithfully alongside her husband, Apostle Kingsley Lawend, in New Creation Life Church International. She carries a deep passion for God, people, and the work of the ministry, reflecting Christ's love through her life and service. With a strong commitment to spiritual growth, discipleship, and pastoral care, she ministers with grace, wisdom, and humility, impacting lives through teaching, prayer, and compassionate leadership.",
+    bio: 'La Pastora Marlien Lawend es una ministra ordenada del Evangelio de Jesucristo y sirve fielmente junto a su esposo, el Apóstol Kingsley Lawend, en New Creation Life Church International. Tiene una profunda pasión por Dios, por las personas y por la obra del ministerio, mostrando el amor de Cristo a través de su vida y servicio. Con un fuerte compromiso hacia el crecimiento espiritual, el discipulado y el cuidado pastoral, ministra con gracia, sabiduría y humildad, impactando vidas mediante la enseñanza, la oración y el liderazgo compasivo.',
     expertise: [
-      'Pastoral Care & Discipleship',
-      "Women's Ministry Leadership",
-      'Teaching & Counseling'
+      'Cuidado pastoral y discipulado',
+      'Liderazgo en ministerios de mujeres',
+      'Enseñanza y consejería'
     ],
     social: {
       twitter: '#',
       linkedin: '#',
       email: 'pastormarlienlawend@nclm.org'
     },
-    quote: 'A life yielded to God becomes a vessel through which His love, healing, and purpose are revealed.',
+    quote: 'Una vida entregada a Dios se convierte en un vaso a través del cual Su amor, sanidad y propósito se manifiestan.',
     achievements: [
-      'Ordained minister of the Gospel of Jesus Christ',
-      'Co-labors in the leadership of New Creation Life Church International',
-      'Actively involved in teaching, discipleship, and pastoral ministry'
+      'Ministra ordenada del Evangelio de Jesucristo',
+      'Co-lídera en la dirección de New Creation Life Church International',
+      'Activamente involucrada en enseñanza, discipulado y ministerio pastoral'
     ]
   },
 
   {
     id: 3,
     name: 'Pastor Charles Adakole',
-    role: 'Resident Pastor, Abuja Church',
+    role: 'Pastor Residente, Iglesia de Abuja',
     image: assets.PastorCharles1,
     isLocalAsset: false,
-    bio: "Pastor Charles Adakole serves as the Resident Pastor of the Abuja Church, carrying a strong pastoral grace with a clear mandate to build a vibrant, Word-centered, and Spirit-led church community. He is deeply committed to sound biblical teaching, discipleship, and practical Christian living, helping believers grow in faith, purpose, and spiritual maturity. With a shepherd's heart and a passion for excellence, he labors to see lives transformed through the power of the Word and the work of the Holy Spirit.",
+    bio: 'El Pastor Charles Adakole sirve como Pastor Residente de la iglesia en Abuja, aportando una fuerte gracia pastoral con el mandato de edificar una comunidad eclesial centrada en la Palabra y guiada por el Espíritu. Está comprometido con la enseñanza bíblica sólida, el discipulado y la vida cristiana práctica, ayudando a los creyentes a crecer en fe, propósito y madurez espiritual.',
     expertise: [
-      'Biblical Teaching & Discipleship',
-      'Pastoral Leadership',
-      'Church Growth & Community Building'
+      'Enseñanza bíblica y discipulado',
+      'Liderazgo pastoral',
+      'Crecimiento de iglesia y construcción comunitaria'
     ],
     social: {
       twitter: '#',
       linkedin: '#',
       email: 'pastorcharles@nclm.org'
     },
-    quote: 'A healthy church is built on the Word, sustained by love, and empowered by the Spirit.',
+    quote: 'Una iglesia saludable se edifica sobre la Palabra, se sostiene por amor y se empodera por el Espíritu.',
     achievements: [
-      'Oversees and leads the Abuja Church congregation',
-      'Committed to discipleship and spiritual growth of members',
-      'Plays a key role in strengthening church structure and community impact'
+      'Supervisa y lidera la congregación de la iglesia en Abuja',
+      'Comprometido con el discipulado y el crecimiento espiritual de los miembros',
+      'Desempeña un papel clave en el fortalecimiento de la estructura e impacto comunitario de la iglesia'
     ]
   },
 
   {
     id: 4,
-    name: 'Minister Shenn Damon',
-    role: 'Netherlands Church, Minister',
-    image: assets.Apostle4,
+    name: 'Ministra Shenn Damon',
+    role: 'Ministra, Iglesia en Países Bajos',
+    image: assets.Apostle3,
     isLocalAsset: false,
-    bio: 'Minister Shean Damon serves in leadership at the Netherlands Church, faithfully supporting the vision of New Creation Life Church International. She ministers with dedication, humility, and a strong commitment to the Word of God, contributing to the spiritual growth, discipleship, and strengthening of the church community. Her heart for service and excellence is evident in her passion to see lives built up in Christ and the church firmly established in faith and love.',
+    bio: 'La Ministra Shenn Damon sirve en el liderazgo de la iglesia en los Países Bajos, apoyando fielmente la visión de New Creation Life Church International. Ministeria con dedicación, humildad y un fuerte compromiso con la Palabra de Dios, contribuyendo al crecimiento espiritual, al discipulado y al fortalecimiento de la comunidad eclesial.',
     expertise: [
-      'Teaching & Discipleship',
-      'Church Administration & Support Ministry',
-      'Prayer & Intercession'
+      'Enseñanza y discipulado',
+      'Administración eclesial y ministerios de apoyo',
+      'Oración e intercesión'
     ],
     social: {
       twitter: '#',
       linkedin: '#',
       email: 'ministersheandamon@nclm.org'
     },
-    quote: "Faithful service in God's house produces lasting fruit in the lives of His people.",
+    quote: 'El servicio fiel en la casa de Dios produce fruto duradero en las vidas de Su pueblo.',
     achievements: [
-      'Serves in leadership at the Netherlands Church',
-      'Actively involved in discipleship and church growth',
-      'Supports the vision and mission of New Creation Life Church International'
+      'Sirve en el liderazgo de la iglesia en los Países Bajos',
+      'Activamente involucrada en discipulado y crecimiento de la iglesia',
+      'Apoya la visión y misión de New Creation Life Church International'
     ]
   },
 
   {
     id: 5,
-    name: 'Minister Victor Gonzalez',
-    role: 'Venezuela Church, Pastor',
-    image: assets.Apostle4,
+    name: 'Ministro Victor Gonzalez',
+    role: 'Pastor, Iglesia en Venezuela',
+    image: assets.Apostle3,
     isLocalAsset: false,
-    bio: "Minister Victor Gonzalez serves as the Pastor of the Venezuela Church, faithfully advancing the vision of New Creation Life Church International within his region. He is a devoted servant of God with a heart for pastoral leadership, discipleship, and building a strong, Christ-centered church community. Through sound teaching, leadership, and care for God's people, he is committed to seeing lives transformed and believers firmly rooted in the Word and empowered by the Holy Spirit.",
+    bio: 'El Ministro Victor Gonzalez sirve como pastor de la iglesia en Venezuela, promoviendo la visión de New Creation Life Church International en su región. Es un servidor dedicado con pasión por el liderazgo pastoral, el discipulado y la construcción de una comunidad eclesial sólida centrada en Cristo. A través de la enseñanza y el liderazgo pastoral, se compromete a ver vidas transformadas y creyentes arraigados en la Palabra y empoderados por el Espíritu Santo.',
     expertise: [
-      'Pastoral Leadership',
-      'Teaching & Discipleship',
-      'Church Growth & Community Development'
+      'Liderazgo pastoral',
+      'Enseñanza y discipulado',
+      'Crecimiento e impacto comunitario de la iglesia'
     ],
     social: {
       twitter: '#',
       linkedin: '#',
       email: 'ministervictor@nclm.org'
     },
-    quote: 'When the Word of God is lived and taught with faith, lives are changed and communities are transformed.',
+    quote: 'Cuando la Palabra de Dios se vive y se enseña con fe, las vidas cambian y las comunidades se transforman.',
     achievements: [
-      'Leads and oversees the Venezuela Church congregation',
-      'Committed to discipleship and spiritual maturity of believers',
-      "Plays a key role in expanding the church's impact within the region"
+      'Lidera y supervisa la congregación de la iglesia en Venezuela',
+      'Comprometido con el discipulado y la madurez espiritual de los creyentes',
+      'Desempeña un papel clave en la expansión del impacto de la iglesia en la región'
     ]
   },
 ];
 
 const departments = [
   {
-    name: 'Worship & Creative Arts',
+    name: 'Adoración y Artes Creativas',
     icon: 'https://img.icons8.com/plasticine/100/apple-music.png',
-    description: 'Creating powerful worship experiences that transform lives',
+    description: 'Creando experiencias de adoración poderosas que transforman vidas',
     team: 45
   },
   {
-    name: 'Children & Family Ministry',
+    name: 'Ministerio de Niños y Familia',
     icon: 'https://img.icons8.com/bubbles/100/family.png',
-    description: 'Building strong spiritual foundations for the next generation',
+    description: 'Formando bases espirituales sólidas para la próxima generación',
     team: 32
   },
   {
-    name: 'Community Outreach',
+    name: 'Alcance Comunitario',
     icon: 'https://img.icons8.com/plasticine/100/conference-call.png',
-    description: 'Serving our community with the love of Christ',
+    description: 'Sirviendo a nuestra comunidad con el amor de Cristo',
     team: 28
   },
   {
-    name: 'Discipleship & Growth',
+    name: 'Discipulado y Crecimiento',
     icon: 'https://img.icons8.com/clouds/100/training.png',
-    description: 'Equipping believers to grow in faith and maturity',
+    description: 'Equipando a los creyentes para crecer en fe y madurez',
     team: 24
   },
   {
-    name: 'Media & Communications',
+    name: 'Medios y Comunicaciones',
     icon: 'https://img.icons8.com/external-flaticons-lineal-color-flat-icons/100/external-media-new-media-flaticons-lineal-color-flat-icons-3.png',
-    description: 'Spreading the Gospel through digital platforms',
+    description: 'Difundiendo el Evangelio a través de plataformas digitales',
     team: 18
   },
   {
-    name: 'Prayer & Intercession',
+    name: 'Oración e Intercesión',
     icon: 'https://img.icons8.com/doodle/100/pray.png',
-    description: 'Building a house of prayer for all nations',
+    description: 'Construyendo una casa de oración para todas las naciones',
     team: 36
   }
 ];
@@ -180,7 +178,7 @@ export default function LeadershipSection() {
   return (
     <div className="bg-gradient-to-b from-white via-gray-50 to-white">
       
-      {/* HERO SECTION */}
+      {/* SECCIÓN HERO */}
       <section className="relative overflow-hidden bg-gradient-to-br from-purple-800 via-purple-950 to-orange-800 text-white py-24">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl" />
@@ -195,48 +193,48 @@ export default function LeadershipSection() {
             className="text-center max-w-4xl mx-auto"
           >
             <span className="inline-block mb-4 text-sm font-bold tracking-wider uppercase bg-white/20 backdrop-blur px-5 py-2 rounded-full">
-              Meet Our Leadership Team
+              Conoce a nuestro equipo de liderazgo
             </span>
             
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-6">
-              Raising Leaders Who
-              <span className="block">Transform Nations</span>
+              Formando líderes que
+              <span className="block">Transforman naciones</span>
             </h1>
             
             <p className="text-xl text-white/90 leading-relaxed max-w-3xl mx-auto">
-              Our leadership team is committed to raising up, equipping, and releasing godly leaders who will make a lasting impact for the Kingdom of God across the earth.
+              Nuestro equipo de liderazgo está comprometido a formar, equipar y enviar líderes piadosos que tendrán un impacto duradero para el Reino de Dios en toda la tierra.
             </p>
 
             <div className="flex flex-wrap justify-center gap-8 mt-12 pt-8 border-t border-white/20">
               <div className="text-center">
                 <div className="text-4xl font-black mb-1">25+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">Years Ministry</div>
+                <div className="text-sm text-white/80 uppercase tracking-wide">Años de ministerio</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-black mb-1">50+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">Churches Planted</div>
+                <div className="text-sm text-white/80 uppercase tracking-wide">Iglesias plantadas</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-black mb-1">30+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">Nations Reached</div>
+                <div className="text-sm text-white/80 uppercase tracking-wide">Naciones alcanzadas</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-black mb-1">1000+</div>
-                <div className="text-sm text-white/80 uppercase tracking-wide">Leaders Trained</div>
+                <div className="text-sm text-white/80 uppercase tracking-wide">Líderes formados</div>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* LEADERSHIP TEAM GRID */}
+      {/* GRID DEL EQUIPO DE LIDERAZGO */}
       <section className="max-w-7xl mx-auto px-6 sm:px-10 py-20">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-black text-gray-900 mb-4">
-            Our Pastoral Leadership
+            Nuestro liderazgo pastoral
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Experienced, anointed, and passionate leaders dedicated to shepherding God's people and advancing His kingdom.
+            Líderes experimentados, ungidos y apasionados dedicados al cuidado del pueblo de Dios y al avance de Su reino.
           </p>
         </div>
 
@@ -252,9 +250,9 @@ export default function LeadershipSection() {
               onClick={() => setSelectedLeader(leader)}
             >
               <div className="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:border-red-300 hover:shadow-2xl transition-all">
-                {/* Image */}
+                {/* Imagen */}
                 <div className="relative h-80 overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                  {/* Use next/image with 'fill' so the image is optimized and responsive */}
+                  {/* Usar next/image con 'fill' para optimizar la imagen y hacerla responsiva */}
                   <Image
                     src={leader.image}
                     alt={leader.name}
@@ -264,7 +262,7 @@ export default function LeadershipSection() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   
-                  {/* Hover Overlay */}
+                  {/* Superposición al pasar el cursor */}
                   <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <div className="flex gap-3">
                       <a href={leader.social.twitter} className="w-10 h-10 bg-white/90 backdrop-blur rounded-full flex items-center justify-center hover:bg-red-600 hover:text-white transition">
@@ -286,7 +284,7 @@ export default function LeadershipSection() {
                   </div>
                 </div>
 
-                {/* Content */}
+                {/* Contenido */}
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-1 group-hover:text-red-600 transition-colors">
                     {leader.name}
@@ -307,7 +305,7 @@ export default function LeadershipSection() {
                   </div>
 
                   <button className="text-red-600 font-semibold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">
-                    View Full Profile
+                    Ver perfil completo
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
@@ -319,15 +317,15 @@ export default function LeadershipSection() {
         </div>
       </section>
 
-      {/* MINISTRY DEPARTMENTS */}
+      {/* DEPARTAMENTOS MINISTERIALES */}
       <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-black text-gray-900 mb-4">
-              Ministry Departments
+              Departamentos Ministeriales
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our dedicated teams work together to fulfill the Great Commission and serve our community with excellence.
+              Nuestros equipos dedicados trabajan juntos para cumplir la Gran Comisión y servir a nuestra comunidad con excelencia.
             </p>
           </div>
 
@@ -348,7 +346,7 @@ export default function LeadershipSection() {
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
                   </svg>
-                  <span className="font-semibold">{dept.team} Team Members</span>
+                  <span className="font-semibold">{dept.team} miembros del equipo</span>
                 </div>
               </motion.div>
             ))}
@@ -356,7 +354,7 @@ export default function LeadershipSection() {
         </div>
       </section>
 
-      {/* CALL TO ACTION */}
+      {/* LLAMADO A LA ACCIÓN */}
       <section className="max-w-7xl mx-auto px-6 sm:px-10 py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -370,24 +368,24 @@ export default function LeadershipSection() {
 
           <div className="relative z-10">
             <h2 className="text-4xl font-black mb-4">
-              Join Us Today
+              Únete a nosotros hoy
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto mb-8">
-              Are you passionate about serving God and His people? We're always looking for gifted, called, and committed individuals to join our ministry.
+              ¿Tienes pasión por servir a Dios y a Su pueblo? Siempre estamos buscando personas con dones, llamadas y compromiso para unirse a nuestro ministerio.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <button className="bg-white text-red-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition shadow-lg">
-                Visit our Branch Today
+                Visita una de nuestras sucursales hoy
               </button>
               <button className="bg-white/10 backdrop-blur border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition">
-                Volunteer With Us
+                Hazte voluntario
               </button>
             </div>
           </div>
         </motion.div>
       </section>
 
-      {/* LEADER DETAIL MODAL - SCROLLABLE & POSITIONED BELOW NAVBAR */}
+      {/* MODAL DE DETALLE DEL LÍDER - DESPLAZABLE Y POSICIONADO DEBAJO DE LA BARRA DE NAVEGACIÓN */}
       <AnimatePresence>
         {selectedLeader && (
           <motion.div
@@ -397,7 +395,7 @@ export default function LeadershipSection() {
             className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm"
             onClick={() => setSelectedLeader(null)}
           >
-            {/* Scrollable Container */}
+            {/* Contenedor desplazable */}
             <div className="fixed inset-0 overflow-y-auto pt-[50px]">
               <div className="min-h-[calc(100vh-50px)] flex items-start justify-center p-4 py-8">
                 <motion.div
@@ -408,7 +406,7 @@ export default function LeadershipSection() {
                   className="bg-white rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl my-8"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  {/* Header */}
+                  {/* Encabezado */}
                   <div className="relative h-72 bg-gradient-to-br from-red-600 to-orange-600">
                     <div className="absolute inset-0 opacity-20">
                       <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl" />
@@ -425,7 +423,7 @@ export default function LeadershipSection() {
                     <div className="relative h-full flex items-end p-8">
                       <div className="flex items-end gap-6">
                         <div className="relative w-32 h-32 rounded-2xl border-4 border-white shadow-xl overflow-hidden flex-shrink-0">
-                          {/* Modal avatar using next/image fill */}
+                          {/* Avatar del modal usando next/image fill */}
                           <Image
                             src={selectedLeader.image}
                             alt={selectedLeader.name}
@@ -441,9 +439,9 @@ export default function LeadershipSection() {
                     </div>
                   </div>
 
-                  {/* Content */}
+                  {/* Contenido */}
                   <div className="p-8">
-                    {/* Quote */}
+                    {/* Cita */}
                     <div className="bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-2xl mb-8 border-l-4 border-red-600">
                       <svg className="w-8 h-8 text-red-600 mb-3" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
@@ -451,15 +449,15 @@ export default function LeadershipSection() {
                       <p className="text-xl text-gray-700 italic font-medium">{selectedLeader.quote}</p>
                     </div>
 
-                    {/* Bio */}
+                    {/* Sobre */}
                     <div className="mb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">About</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Sobre</h3>
                       <p className="text-gray-600 leading-relaxed">{selectedLeader.bio}</p>
                     </div>
 
-                    {/* Expertise */}
+                    {/* Áreas de experiencia */}
                     <div className="mb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Areas of Expertise</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Áreas de experiencia</h3>
                       <div className="flex flex-wrap gap-3">
                         {selectedLeader.expertise.map((skill, i) => (
                           <span key={i} className="px-5 py-2 bg-red-50 text-red-600 font-semibold rounded-full border border-red-200">
@@ -469,9 +467,9 @@ export default function LeadershipSection() {
                       </div>
                     </div>
 
-                    {/* Achievements */}
+                    {/* Logros */}
                     <div className="mb-8">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Key Achievements</h3>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">Logros clave</h3>
                       <ul className="space-y-3">
                         {selectedLeader.achievements.map((achievement, i) => (
                           <li key={i} className="flex items-start gap-3">
@@ -484,16 +482,16 @@ export default function LeadershipSection() {
                       </ul>
                     </div>
 
-                    {/* Contact */}
+                    {/* Contacto */}
                     <div className="flex flex-wrap gap-3 pt-6 border-t border-gray-200">
                       <a href={selectedLeader.social.twitter} className="flex-1 min-w-[150px] bg-gray-900 text-white py-3 px-6 rounded-xl font-semibold hover:bg-gray-800 transition text-center">
-                        Follow on Twitter
+                        Seguir en Twitter
                       </a>
                       <a href={selectedLeader.social.linkedin} className="flex-1 min-w-[150px] bg-blue-600 text-white py-3 px-6 rounded-xl font-semibold hover:bg-blue-700 transition text-center">
-                        Connect on LinkedIn
+                        Conectar en LinkedIn
                       </a>
                       <a href={`mailto:${selectedLeader.social.email}`} className="flex-1 min-w-[150px] bg-red-600 text-white py-3 px-6 rounded-xl font-semibold hover:bg-red-700 transition text-center">
-                        Send Email
+                        Enviar correo
                       </a>
                     </div>
                   </div>
