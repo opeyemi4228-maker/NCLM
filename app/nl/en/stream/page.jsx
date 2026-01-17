@@ -115,7 +115,7 @@ export default function StreamPage() {
         alert("Error initializing payment. Try again.");
       }
     } catch (err) {
-      console.error(err);
+      console.error('[Stream Payment] Payment processing error:', err?.message || err);
       alert("Payment failed. Please try again later.");
     }
   };

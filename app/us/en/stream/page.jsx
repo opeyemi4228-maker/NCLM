@@ -113,7 +113,7 @@ export default function StreamPage() {
         alert('Payment initiation failed. Please try again.');
       }
     } catch (err) {
-      console.error(err);
+      console.error('[Stream Payment] Payment processing error:', err?.message || err);
       alert('Payment failed. Please try later.');
     }
   };

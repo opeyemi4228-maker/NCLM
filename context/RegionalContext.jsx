@@ -62,7 +62,7 @@ export function RegionalProvider({ children }) {
         router.replace(`/${detectedCountry}/${langToUse}`);
       }
     } catch (err) {
-      console.error('Country detection failed, using default.', err);
+      console.error('[RegionalContext] Country detection failed, falling back to default country:', err?.message || err);
       setCountry(DEFAULT_COUNTRY);
       setLang(DEFAULT_LANG);
       if (pathname === '/') {

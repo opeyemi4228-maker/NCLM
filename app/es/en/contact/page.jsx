@@ -24,9 +24,16 @@ export default function ContactPage() {
 
   function submitForm(e) {
     e.preventDefault();
-    // TODO: Wire this to Firebase / Supabase / Email API
-    console.log("Submit", { type: activeForm, ...formData, createdAt: new Date().toISOString() });
-    // optimistic UX
+    // Backend integration needed: Send via Firebase/Supabase/Email API
+    const submissionData = { type: activeForm, ...formData, createdAt: new Date().toISOString() };
+    
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+    
+    console.log("Form submission queued:", submissionData);
     setFormData({ name: "", email: "", phone: "", message: "" });
     setActiveForm(null);
     alert("Thank you — your submission has been received.");

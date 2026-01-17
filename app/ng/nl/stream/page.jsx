@@ -112,7 +112,7 @@ export default function StreamPage() {
         alert("Fout bij het starten van betaling. Probeer opnieuw.");
       }
     } catch (err) {
-      console.error(err);
+      console.error('[Stream Payment] Payment processing error:', err?.message || err);
       alert("Betaling mislukt. Probeer het later opnieuw.");
     }
   };
